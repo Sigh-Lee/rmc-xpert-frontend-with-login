@@ -1,5 +1,3 @@
-# package.json
-package_json_content = """
 {
   "name": "rmc-xpert-frontend",
   "version": "1.0.0",
@@ -15,9 +13,7 @@ package_json_content = """
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "vite": "^4.5.0",
-    "@vitejs/plugin-react": "^4.0.0"
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.5.0"
   }
 }
-"""
-(frontend_path / "package.json").write_text(package_json_content.strip())
