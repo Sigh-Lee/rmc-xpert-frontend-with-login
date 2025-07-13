@@ -1,5 +1,3 @@
-# src/components/ClientSymbolSelector.jsx
-client_symbol_selector_content = """
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -18,9 +16,10 @@ export default function ClientSymbolSelector({ licenseKey }) {
       .then(res => setSelectedSymbols(res.data.symbols || []));
   }, [licenseKey]);
 
-  const toggleSymbol = symbol => selectedSymbols.includes(symbol)
-    ? setSelectedSymbols(prev => prev.filter(s => s !== symbol))
-    : setSelectedSymbols(prev => [...prev, symbol]);
+  const toggleSymbol = symbol =>
+    selectedSymbols.includes(symbol)
+      ? setSelectedSymbols(prev => prev.filter(s => s !== symbol))
+      : setSelectedSymbols(prev => [...prev, symbol]);
 
   const saveSymbols = () => {
     axios.post('/api/client/update-symbols', { licenseKey, symbols: selectedSymbols })
